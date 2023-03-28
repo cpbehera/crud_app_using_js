@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Elements Example</title>
+  </head>
+  <body>
+    <header>
+      <h1>DOM Elements Example</h1>
+    </header>
+    <main>
+      <form>
+        <label for="name-input">Name:</label>
+        <input type="text" id="name-input" />
+        <br />
+        <label for="gender-input">Gender:</label>
+        <input type="text" id="gender-input" />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+      <div id="elements-container"></div>
+      <div>
+        <label for="male-filter">Male</label>
+        <input type="radio" id="male-filter" name="gender-filter" value="male" />
+        <label for="female-filter">Female</label>
+        <input type="radio" id="female-filter" name="gender-filter" value="female" />
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Example Company</p>
+    </footer>
+
+    <script>
+      const form = document.querySelector("form");
+      const nameInput = document.querySelector("#name-input");
+      const genderInput = document.querySelector("#gender-input");
+      const elementsContainer = document.querySelector("#elements-container");
+      const maleFilter = document.querySelector("#male-filter");
+      const femaleFilter = document.querySelector("#female-filter");
+
+      let elements = [];
+
+      function createElement(name, gender) {
+        const element = document.createElement("div");
+        element.innerHTML = `${name} (${gender})`;
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => {
+          element.remove();
+          elements = elements.filter((el) => el !== element);
+        });
+        element.appendChild(deleteButton);
+        elementsContainer.appendChild(element);
+        elements.push(element);
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = nameInput.value;
+        const gender = genderInput.value;
+        createElement(name, gender);
+      });
+
+      function filterElements() {
+        const selectedValue = document.querySelector(
+          'input[name="gender-filter"]:checked'
+        )?.value;
+        elements.forEach((el) => {
+          if (selectedValue && !el.textContent.includes(selectedValue)) {
+            el.style.display = "none";
+          } else {
+            el.style.display = "block";
+          }
+        });
+      }
+
+      maleFilter.addEventListener("change", filterElements);
+      femaleFilter.addEventListener("change", filterElements);
+    </script>
+  </body>
+</html>
