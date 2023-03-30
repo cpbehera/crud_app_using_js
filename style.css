@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background: radial-gradient(ellipse at center, #443501 0%,#a0a0a0 100%);
+}
+/* header */
+header {
+  text-align: center;
+  padding: 1rem;
+}
+header h1{
+    background: linear-gradient(to bottom, #d6d6d6 22%,#b9b2a8 24%, #f8efdd 26%, #cfc09f 27%,#bdb292 40%,#f5f2ec 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+font-family: 'Playfair Display', serif;
+    position: relative;
+	text-transform: uppercase;	
+	font-size: 2rem;
+    letter-spacing: 5px;
+	margin: 0;
+	font-weight: 400;
+}
+
+h1:after {
+    background: none;
+    content: attr(data-heading);
+    left: 0;
+	top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+		-1px 0 1px #c6bb9f, 
+		0 1px 1px #c6bb9f, 
+		5px 5px 10px rgba(224, 224, 224, 0.4),
+		-5px -5px 10px rgba(247, 247, 247, 0.4);
+}
+
+/* main */
+.filterGender{
+    text-align: end;
+    padding-right: 5rem;
+    text-transform: uppercase;
+}
+main form {
+  padding: 1rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input_field_wrapper {
+  margin: 0 1.5rem;
+}
+.input_field_wrapper input {
+  width: 200px;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.884);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 45, 45, 0.18);
+  outline: none;
+}
+form button {
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.884);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+#elements-container {
+  padding: 1rem;
+  height: 66vh;
+  overflow-y: scroll;
+}
+#elements-container::-webkit-scrollbar{
+    display: none;
+}
+.elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  width: 45%;
+  margin: 10px auto;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.884);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+.nameElement,
+.genderElement {
+  border-radius: 10px;
+  width: 160px;
+  padding: 0.8rem;
+  text-align: center;
+  border: 5px double rgba(177, 177, 177, 0.18);
+}
+.buttonElement {
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.884);
+  box-shadow: 0 8px 32px 0 rgba(197, 197, 197, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* footer */
+footer{
+    text-align: center;
+  padding: 1rem;
+}
+footer p{
+    background: linear-gradient(to bottom, #d6d6d6 22%,#b9b2a8 24%, #f8efdd 26%, #cfc09f 27%,#bdb292 40%,#f5f2ec 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+font-family: 'Playfair Display', serif;
+    position: relative;
+	text-transform: uppercase;	
+	font-size: 1.2rem;
+	margin: 0;
+	font-weight: 400;
+}
+p:after {
+    background: none;
+    content: attr(data-heading);
+    left: 0;
+	top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+		-1px 0 1px #c6bb9f, 
+		0 1px 1px #c6bb9f, 
+		5px 5px 10px rgba(224, 224, 224, 0.4),
+		-5px -5px 10px rgba(247, 247, 247, 0.4);
+}
